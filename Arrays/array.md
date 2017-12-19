@@ -20,13 +20,13 @@ One-Dimensional Arrays
 
 example of one dimentional array:
 
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | <- Array Indices
-| 40 | 55 | 63 | 17 | 22 | 68 | 89 | 97 | 89 | <- Values Stored
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | <- Array Indices
+40 | 55 | 63 | 17 | 22 | 68 | 89 | 97 | 89 | <- Values Stored
 
-Array length = 9
-First index = 0, associated value = 40
-Fourth index = 3, associated value = 17
-Last index = 8, associated value = 89
+Array length = 9  
+First index = 0, associated value = 40  
+Fourth index = 3, associated value = 17  
+Last index = 8, associated value = 89  
 nth index = (n-1), associated value = n-1's value
 
 Creating, Initializing, and Accessing an Array
@@ -75,24 +75,24 @@ Object[]  ao,	// array of Object
 Collection[] ca;	// array of Collection of unknown type
 ```
 
-Although the above first declaration establishes the fact that intArray is an array variable, no array actually exists
-It simply tells to the compiler that this(intArray) variable will hold an array of the integer type
+Although the above first declaration establishes the fact that intArray is an array variable, no array actually exists  
+It simply tells to the compiler that this(intArray) variable will hold an array of the integer type  
 To link intArray with an actual, physical array of integers, you must allocate one using new and assign it to intArray
 
 Instantiating an Array in Java
 ---
 
-When an array is declared, only a reference of array is created
-To actually create or give memory to array, you create an array like this:
+When an array is declared, only a reference of array is created  
+To actually create or give memory to array, you create an array like this:  
 The general form of new as it applies to one-dimensional arrays appears as follows:
 
 ```
 array-var-name = new dataType [size];
 ```
 
-Here, type specifies the data type of data being allocated
-Size specifies the number of elements in the array
-And var-name is the name of array variable that is linked to the array
+Here, type specifies the data type of data being allocated  
+Size specifies the number of elements in the array  
+And var-name is the name of array variable that is linked to the array  
 That is, to use new to allocate an array, you must specify the type and number of elements to allocate
 
 ```
@@ -108,9 +108,9 @@ int[] intArray = new int[20]; // combining both declaring and allocating stateme
 
 The elements in the array allocated by new will automatically be initialized to zero (for numeric types), false (for boolean), or null (for reference types)
 
-Obtaining an array is a two-step process
-First, you must declare a variable of the desired array type
-Second, you must allocate the memory that will hold the array, using new, and assign it to the array variable
+Obtaining an array is a two-step process  
+First, you must declare a variable of the desired array type  
+Second, you must allocate the memory that will hold the array, using new, and assign it to the array variable  
 Thus, in Java all arrays are dynamically allocated
 
 Array Literal
@@ -122,7 +122,7 @@ In a situation, where the size of the array and variables of array are already k
 int[] intArray = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};	// Declaring array literal
 ```
 
-The length of this array determines the length of the created array
+The length of this array determines the length of the created array  
 There is no need to write the new int[] part in the latest versions of Java
 
 ```
@@ -132,8 +132,8 @@ int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};	// Declaring array literal
 Accessing Java Array Elements using for Loop
 ---
 
-Each element in the array is accessed via its index
-The index begins with 0 and ends at (total array size)-1
+Each element in the array is accessed via its index  
+The index begins with 0 and ends at (total array size)-1  
 All the elements of array can be accessed using Java for Loop
 
 ```
@@ -247,7 +247,7 @@ An array of objects is created just like an array of primitive type data items i
 Student[] arr = new Student[7];	//student is a user-defined class
 ```
 
-The studentArray contains seven memory spaces each of size of student class in which the address of seven Student objects can be stored
+The studentArray contains seven memory spaces each of size of student class in which the address of seven Student objects can be stored  
 The Student objects have to be instantiated using the constructor of the Student class and their references should be assigned to the array elements in the following way
 
 ```
@@ -310,7 +310,7 @@ Element at 4 : 5 Ross
 What happens if we try to access element outside the array size?
 ---
 
-Compiler throws ArrayIndexOutOfBoundsException to indicate that array has been accessed with an illegal index
+Compiler throws ArrayIndexOutOfBoundsException to indicate that array has been accessed with an illegal index  
 The index is either negative or greater than or equal to size of array
 
 ```
@@ -349,26 +349,25 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 2
 Multidimensional Arrays
 ===
 
-Multidimensional arrays are arrays of arrays with each element of the array holding the reference of other array
-These are also known as Jagged Arrays
+Multidimensional arrays are arrays of arrays with each element of the array holding the reference of other array  
+These are also known as Jagged Arrays  
 A multidimensional array is created by appending one set of square brackets ([]) per dimension
 
 example of 2 dimentional array:
 
-| | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-| 0 | value[0] [0] | value[0] [1] | value[0] [2] | value[0] [3] | value[0] [4] | value[0] [5] | value[0] [6] | value[0] [7] | value[0] [8] | value[0] [9] |
-| 1 | value[1] [0] | value[1] [1] | value[1] [2] | value[1] [3] | value[1] [4] | value[1] [5] | value[1] [6] | value[1] [7] | value[1] [8] | value[1] [9] |
-| 2 | value[2] [0] | value[2] [1] | value[2] [2] | value[2] [3] | value[2] [4] | value[2] [5] | value[2] [6] | value[2] [7] | value[2] [8] | value[2] [9] |
-| 3 | value[3] [0] | value[3] [1] | value[3] [2] | value[3] [3] | value[3] [4] | value[3] [5] | value[3] [6] | value[3] [7] | value[3] [8] | value[3] [9] |
-| 4 | value[4] [0] | value[4] [1] | value[4] [2] | value[4] [3] | value[4] [4] | value[4] [5] | value[4] [6] | value[4] [7] | value[4] [8] | value[4] [9] |
-| 5 | value[5] [0] | value[5] [1] | value[5] [2] | value[5] [3] | value[5] [4] | value[5] [5] | value[5] [6] | value[5] [7] | value[5] [8] | value[5] [9] |
-| 6 | value[6] [0] | value[6] [1] | value[6] [2] | value[6] [3] | value[6] [4] | value[6] [5] | value[6] [6] | value[6] [7] | value[6] [8] | value[6] [9] |
-| 7 | value[7] [0] | value[7] [1] | value[7] [2] | value[7] [3] | value[7] [4] | value[7] [5] | value[7] [6] | value[7] [7] | value[7] [8] | value[7] [9] |
-| 8 | value[8] [0] | value[8] [1] | value[8] [2] | value[8] [3] | value[8] [4] | value[8] [5] | value[8] [6] | value[8] [7] | value[8] [8] | value[8] [9] |
-| 9 | value[9] [0] | value[9] [1] | value[9] [2] | value[9] [3] | value[9] [4] | value[9] [5] | value[9] [6] | value[9] [7] | value[9] [8] | value[9] [9] |
+* | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+0 | value[0] [0] | value[0] [1] | value[0] [2] | value[0] [3] | value[0] [4] | value[0] [5] | value[0] [6] | value[0] [7] | value[0] [8] | value[0] [9]
+1 | value[1] [0] | value[1] [1] | value[1] [2] | value[1] [3] | value[1] [4] | value[1] [5] | value[1] [6] | value[1] [7] | value[1] [8] | value[1] [9]
+2 | value[2] [0] | value[2] [1] | value[2] [2] | value[2] [3] | value[2] [4] | value[2] [5] | value[2] [6] | value[2] [7] | value[2] [8] | value[2] [9]
+3 | value[3] [0] | value[3] [1] | value[3] [2] | value[3] [3] | value[3] [4] | value[3] [5] | value[3] [6] | value[3] [7] | value[3] [8] | value[3] [9]
+4 | value[4] [0] | value[4] [1] | value[4] [2] | value[4] [3] | value[4] [4] | value[4] [5] | value[4] [6] | value[4] [7] | value[4] [8] | value[4] [9]
+5 | value[5] [0] | value[5] [1] | value[5] [2] | value[5] [3] | value[5] [4] | value[5] [5] | value[5] [6] | value[5] [7] | value[5] [8] | value[5] [9]
+6 | value[6] [0] | value[6] [1] | value[6] [2] | value[6] [3] | value[6] [4] | value[6] [5] | value[6] [6] | value[6] [7] | value[6] [8] | value[6] [9]
+7 | value[7] [0] | value[7] [1] | value[7] [2] | value[7] [3] | value[7] [4] | value[7] [5] | value[7] [6] | value[7] [7] | value[7] [8] | value[7] [9]
+8 | value[8] [0] | value[8] [1] | value[8] [2] | value[8] [3] | value[8] [4] | value[8] [5] | value[8] [6] | value[8] [7] | value[8] [8] | value[8] [9]
+9 | value[9] [0] | value[9] [1] | value[9] [2] | value[9] [3] | value[9] [4] | value[9] [5] | value[9] [6] | value[9] [7] | value[9] [8] | value[9] [9]
 
-
-Array row length = 10
+Array row length = 10  
 Array column length = 10
 
 Creating, Initializing, and Accessing an Array
@@ -411,7 +410,7 @@ Output:
 Passing Arrays to Methods
 ---
 
-Like variables, we can also pass arrays to methods
+Like variables, we can also pass arrays to methods  
 For example, below program pass array to method sum for calculating sum of array's values
 
 ```
@@ -450,7 +449,7 @@ sum of array values : 15
 Returning Arrays from Methods
 ---
 
-As usual, a method can also return an array
+As usual, a method can also return an array  
 For example, below program returns an array from method m1
 
 ```
@@ -474,6 +473,8 @@ public class Test {
 ```
 
 Output:
+---
+
 ```
 1 2 3
 ```
@@ -517,17 +518,18 @@ class [Ljava.lang.String;
 
 Explanantion:
 ---
-The string "[I" is the run-time type signature for the class object "array with component type int", the only direct superclass of any array type is java.lang.Object
-The string "[B" is the run-time type signature for the class object "array with component type byte"
-The string "[S" is the run-time type signature for the class object "array with component type short"
+
+The string "[I" is the run-time type signature for the class object "array with component type int", the only direct superclass of any array type is java.lang.Object  
+The string "[B" is the run-time type signature for the class object "array with component type byte"  
+The string "[S" is the run-time type signature for the class object "array with component type short"  
 The string "[L" is the run-time type signature for the class object "array with component type of a Class", the Class name is then followed
 
 Array Members
 ---
 
-Now as we know that arrays are object of a class and direct superclass of arrays is class Object.The members of an array type are all of the following:
-The public final field length, which contains the number of components of the array, length may be positive or zero
-All the members inherited from class Object; the only method of Object that is not inherited is its clone method
+Now as we know that arrays are object of a class and direct superclass of arrays is class Object.The members of an array type are all of the following:  
+The public final field length, which contains the number of components of the array, length may be positive or zero  
+All the members inherited from class Object; the only method of Object that is not inherited is its clone method  
 The public method clone(), which overrides clone method in class Object and throws no checked exceptions
 
 Cloning of arrays
