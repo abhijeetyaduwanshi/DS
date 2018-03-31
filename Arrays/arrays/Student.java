@@ -1,5 +1,10 @@
 package arrays;
 
+/**
+ * This will create a student object.
+ * 
+ * @author ayaduwanshi
+ */
 public class Student {
     public int rollNumber;
     public String studentName;

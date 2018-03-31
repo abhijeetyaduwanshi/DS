@@ -1,6 +1,11 @@
 package arrays;
 
-public class ArrayRotation {
+/**
+ * This program is to rotate the given array with the help of a temporary array.
+ * 
+ * @author ayaduwanshi
+ */
+public class ArrayRotationWithTemporaryArray {
     public static void main(String[] args) {
         int[] initialArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int rotateBy = 4;
@@ -25,18 +30,18 @@ public class ArrayRotation {
         printArray(initialArray);
     }
 
-    public static int[] initializingTemporaryArray(int[] firstArray, int[] secondArray) {
-        for (int i = 0; i < secondArray.length; i++) {
-            secondArray[i] = firstArray[i];
-        }
-        return secondArray;
-    }
-
     public static void printArray(int[] array) {
         for (int arrayValue : array) {
             System.out.print(arrayValue);
         }
         System.out.println();
+    }
+
+    public static int[] initializingTemporaryArray(int[] firstArray, int[] secondArray) {
+        for (int i = 0; i < secondArray.length; i++) {
+            secondArray[i] = firstArray[i];
+        }
+        return secondArray;
     }
 
     public static int[] shiftingArray(int[] arrayToShift, int index) {

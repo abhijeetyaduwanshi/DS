@@ -1,5 +1,10 @@
 package arrays;
 
+/**
+ * This program is to study how arrays are returned from methods.
+ * 
+ * @author ayaduwanshi
+ */
 public class ReturningArraysFromMethods {
     public static void main(String args[]) {
         int arr[] = m1();
@@ -9,8 +14,13 @@ public class ReturningArraysFromMethods {
         }
     }
 
+    /**
+     * This method will return the array.
+     * 
+     * @return {@code: array}
+     */
     public static int[] m1() {
         // returning  array
-        return new int[]{1,2,3};
+        return new int[] {1, 2, 3};
     }
 }

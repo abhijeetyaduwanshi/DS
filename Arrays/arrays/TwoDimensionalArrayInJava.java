@@ -1,5 +1,10 @@
 package arrays;
 
+/**
+ * This program is to study two dimensional arrays in Java.
+ * 
+ * @author ayaduwanshi
+ */
 public class TwoDimensionalArrayInJava {
     public static void main(String[] args) {
 

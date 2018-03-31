@@ -1,5 +1,11 @@
 package arrays;
 
+/**
+ * This program will use the student object,
+ * assign the value and print the values.
+ * 
+ * @author ayaduwanshi
+ */
 public class StudentsArray {
     public static void main(String[] args) {
 

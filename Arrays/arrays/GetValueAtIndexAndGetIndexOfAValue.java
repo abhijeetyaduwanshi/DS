@@ -1,5 +1,11 @@
 package arrays;
 
+/**
+ * This program is to get the value at a given index.
+ * Also this program is to find the index of a given value.
+ * 
+ * @author ayaduwanshi
+ */
 public class GetValueAtIndexAndGetIndexOfAValue {
     private int[] array = {2, 5, 2, 21, 35, 47, 54, 47, 47, 91};
 
@@ -9,6 +15,12 @@ public class GetValueAtIndexAndGetIndexOfAValue {
         System.out.println("Value 47 is available at indices: " + getIndexAndValue.getIndexOfValue(47));
     }
 
+    /**
+     * This method is to get the value at a given index.
+     * 
+     * @param index; at which the value is to be found
+     * @return {@code: value}
+     */
     public int getValueAtIndex(int index) {
         if(index < array.length) {
             return array[index];
@@ -16,6 +28,12 @@ public class GetValueAtIndexAndGetIndexOfAValue {
         return -1;
     }
 
+    /**
+     * This method is to get the index of the given value.
+     * 
+     * @param value; of the given index
+     * @return {@code: index}
+     */
     public String getIndexOfValue(int value) {
         String valueAtIndex = "";
         for (int i = 0; i < array.length; i++) {

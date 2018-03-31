@@ -1,8 +1,13 @@
 package arrays;
 
+/**
+ * This program is to study three dimensional arrays in Java.
+ * 
+ * @author ayaduwanshi
+ */
 public class ThreeDimensionalArrayInJava {
     public static void main(String[] args) {
-        
+
         // declaring and initializing 3D array
         int[][][] arr = {{{10, 20, 30}, {40, 50, 60}, {70, 80, 90}},
                 {{100, 200, 300}, {400, 500, 600}, {700, 800, 900}},

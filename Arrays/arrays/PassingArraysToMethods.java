@@ -1,18 +1,26 @@
 package arrays;
 
+/**
+ * This program is to study passing arrays in methods.
+ *   
+ * @author ayaduwanshi
+ */
 public class PassingArraysToMethods {
     public static void main(String args[]) {
         int[] arr = {3, 1, 2, 5, 4};
-        sum(arr);
+        System.out.println(sum(arr));
     }
 
-    public static void sum(int[] arr) {
+    /**
+     * This method is to add all the values in the array.
+     * 
+     * @param arr; to add all the values
+     */
+    public static int sum(int[] arr) {
         int sum = 0;
-
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-
-        System.out.println("Sum of array values : " + sum);
+        return sum;
     }
 }

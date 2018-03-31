@@ -1,5 +1,10 @@
 package arrays;
 
+/**
+ * This program is to rotate the given array with the help of a temporary variable.
+ * 
+ * @author ayaduwanshi
+ */
 public class ArrayRotationWithTemporaryVariable {
     public static void main(String[] args) {
         int[] initialArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
