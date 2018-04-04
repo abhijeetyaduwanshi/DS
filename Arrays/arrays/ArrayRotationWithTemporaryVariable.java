@@ -19,6 +19,11 @@ public class ArrayRotationWithTemporaryVariable {
         printArray(initialArray);
     }
 
+    /**
+     * This method is to print the given array.
+     * 
+     * @param array; to print
+     */
     public static void printArray(int[] array) {
         for (int arrayValue : array) {
             System.out.print(arrayValue + " ");
@@ -26,6 +31,13 @@ public class ArrayRotationWithTemporaryVariable {
         System.out.println();
     }
 
+    /**
+     * This method is to rotate the original array.
+     * 
+     * @param array; original array to rotate
+     * @param index; offset by which the array is to be rotated
+     * @return {@code: rotated original array}
+     */
     public static int[] arrayRotation(int[] array, int index) {
         int temp;
 

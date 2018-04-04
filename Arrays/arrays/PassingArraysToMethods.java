@@ -2,7 +2,7 @@ package arrays;
 
 /**
  * This program is to study passing arrays in methods.
- *   
+ * 
  * @author ayaduwanshi
  */
 public class PassingArraysToMethods {
