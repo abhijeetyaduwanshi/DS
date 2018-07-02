@@ -2,7 +2,7 @@ Linked List
 ===
 
 Introduction
-===
+---
 
 - Linked List is a linear data structure
 - Unlike arrays, linked list elements are not stored at contiguous location; but the elements are linked using pointers
@@ -30,7 +30,7 @@ Linked list drawbacks
 - Not cache friendly. Since array elements are contiguous locations, there is locality of reference which is not there in case of linked lists
 
 Linked list representation
-===
+---
 
 - A linked list is represented by a pointer to the first node of the linked list
 - The first node is called head
@@ -62,7 +62,7 @@ public class LinkedListInJava {
 ```
 
 Simple linked list in java
-===
+---
 
 Linked list with 3 nodes.
 
@@ -135,7 +135,7 @@ public class FirstLinkedList {
 ```
 
 Printing a linked list
-===
+---
 
 ```
 /* This function prints contents of linked list starting from head */
