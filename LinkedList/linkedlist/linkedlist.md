@@ -139,13 +139,13 @@ Printing a linked list
 
 ```
 /* This function prints contents of linked list starting from head */
-    public void printList() {
-        Node n = head;
-        while(n != null) {
-            System.out.print(n.data + " ");
-            n = n.next;
-        }
+public void printList() {
+    Node n = head;
+    while(n != null) {
+        System.out.print(n.data + " ");
+        n = n.next;
     }
+}
 ```
 
 The above method can be called at the end of the main method. The required linked list will be printed.
@@ -155,4 +155,139 @@ Output:
 
 ```
 1 2 3
+```
+
+Inserting a node
+---
+There are three ways of inserting a node in a linked list
+1. At the front of the linked list
+2. After a given node
+3. At the end of the linked list
+
+Inserting a node at the front of the linked list
+---
+New node added before the head of the given linked list becomes the new head of the linked list
+
+For example:
+Given linked list 10->15->20->25
+Add an item 5 at the front
+Required linked list becomes 5->10->15->20->25
+
+Let us call the function that adds node at the front of the list is push()
+
+The push() must receive a pointer to the head pointer, because push must change the head pointer to point to the new node
+
+It is a 4 step process
+1 & 2: Allocate the Node & Put in the data
+3. Make next of new Node as head
+4. Move the head to point to new Node
+
+```
+public void push(int new_data) {
+    /* 1 & 2: Allocate the Node &
+           Put in the data*/
+    Node new_node = new Node(new_data);
+
+    /* 3. Make next of new Node as head */
+    new_node.next = head;
+
+    /* 4. Move the head to point to new Node */
+    head = new_node;
+}
+```
+
+Inserting a node after a given node of the linked list
+---
+For example:
+Given linked list 10->15->20->25
+Add an item 18 after 2 places
+Required linked list becomes 10->15->18->20->25
+
+Let us call the function that adds node after a given node of the list is insertAfter()
+
+We are given pointer to a node, and the new node is inserted after the given node
+
+It is a 5 step process
+1. Check if the given Node is null
+2 & 3: Allocate the Node & Put in the data
+4. Make next of new Node as next of prev_node
+5. Make next of prev_node as new_node
+
+```
+public void insertAfter(Node prev_node, int new_data) {
+    /* 1. Check if the given Node is null */
+    if (prev_node == null) {
+        System.out.println("The given previous node cannot be null");
+        return;
+    }
+
+    /* 2. Allocate the Node & 3. Put in the data*/
+    Node new_node = new Node(new_data);
+
+    /* 4. Make next of new Node as next of prev_node */
+    new_node.next = prev_node.next;
+
+    /* 5. make next of prev_node as new_node */
+    prev_node.next = new_node;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inserting a node at the end of the linked list
+---
+For example:
+Given linked list 10->15->20->25
+Add an item 30 at the end of the linked list
+Required linked list becomes 10->15->20->25->30
+
+Let us call the function that adds node at the end of the list is append()
+
+It is a 7 step process
+1, 2 & 3. Allocate the Node & Put in the data & Set next as null
+4. If the Linked List is empty, then make the new node as head
+5. This new node is going to be the last node, so make next of it as null
+6. Else traverse till the last node
+7. Change the next of last node
+
+```
+public void append(int new_data) {
+    /* 1. Allocate the Node &
+    2. Put in the data
+    3. Set next as null */
+    Node new_node = new Node(new_data);
+
+    /* 4. If the Linked List is empty, then make the
+        new node as head */
+    if (head == null) {
+        head = new Node(new_data);
+        return;
+    }
+
+    /* 4. This new node is going to be the last node, so
+      make next of it as null */
+    new_node.next = null;
+
+    /* 5. Else traverse till the last node */
+    Node last = head;
+    while (last.next != null)
+        last = last.next;
+
+    /* 6. Change the next of last node */
+    last.next = new_node;
+    return;
+}
 ```
