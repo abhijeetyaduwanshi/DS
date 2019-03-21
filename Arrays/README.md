@@ -4,30 +4,56 @@ Arrays
 Points to remember
 ---
 
+- An array is collection of items stored at contiguous memory locations
+- The idea is to store multiple items of same type together
+- This makes it easier to calculate the position of each element by simply adding an offset to a base value
 - An array is a group of like-typed variables that are referred to by a common name
 - In Java all arrays are dynamically allocated
 - Since arrays are objects in Java, we can find their length using member length
-- In C/C++, we can find their length using sizeof
 - A Java array variable can also be declared like other variables with [] after the data type
 - The variables in the array are ordered and each have an index beginning from 0
 - Java array can be also be used as a static field, a local variable or a method parameter
 - The size of an array must be specified by an int value and not long or short
-- The direct superclass of an array type is Object
+- An array of characters is called a ‘string’, whereas an array of ints or floats is called simply an array
 - Array can contains primitives data types as well as objects of a class depending on the definition of array. In case of primitives data types, the actual values are stored in contiguous memory locations. In case of objects of a class, the actual objects are stored in heap segment
 
+Indexing in array
+---
+
+- 0 (zero-based indexing): The first element of the array is indexed by subscript of 0
+- 1 (one-based indexing): The first element of the array is indexed by subscript of 1
+- n (n-based indexing): The base index of an array can be freely chosen. Usually programming languages allowing n-based indexing also allow negative index values and other scalar data types like enumerations, or characters may be used as an array index
+
+```
+// example of arrays
+
+// arr1 is the array of characters.
+char arr1[] = {'g', 'e', 'e', 'k', 's'};
+
+// arr2 is the array of integers.
+int arr2[] = {10, 20, 30, 40, 50};
+
+// Item at i'th index in array is typically accessed by `arr[i]`
+arr1[0] will gives us 'g'
+
+// and
+arr2[3] gives us 40
+```
+
 One-Dimensional Arrays
-===
+---
 
-example of one dimentional array:
-
+```
+// example of one dimensional arrays
 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | <- Array Indices
 40 | 55 | 63 | 17 | 22 | 68 | 89 | 97 | 89 | <- Values Stored
 
-Array length = 9  
-First index = 0, associated value = 40  
-Fourth index = 3, associated value = 17  
-Last index = 8, associated value = 89  
+Array length = 9
+First index = 0, associated value = 40
+Fourth index = 3, associated value = 17
+Last index = 8, associated value = 89
 nth index = (n-1), associated value = n-1's value
+```
 
 Creating, Initializing, and Accessing an Array
 ---
@@ -36,12 +62,12 @@ The general form of array declaration is
 
 ```
 type var-name[];
-int intArray[];
+int array[];
 
-OR
+// or
 
 type[] var-name;
-int[] intArray;
+int[] array;
 ```
 
 An array declaration has two components:
@@ -54,11 +80,11 @@ An array declaration has two components:
 ```
 // both are valid declarations
 int intArray[];
-OR
+
+// or
 int[] intArray; (preferred)
 
-example of array declaration with different datatypes:
-
+// example of array declaration with different datatypes:
 byte[] byteArray;
 short[] shortsArray;
 boolean[] booleanArray;
@@ -68,50 +94,42 @@ double[] doubleArray;
 char[] charArray;
 
 // an array of references to objects of the class MyClass (a class created by user)
-
 MyClass[] myClassArray;
 
 Object[]  ao,	// array of Object
 Collection[] ca;	// array of Collection of unknown type
 ```
 
-Although the above first declaration establishes the fact that intArray is an array variable, no array actually exists  
-It simply tells to the compiler that this(intArray) variable will hold an array of the integer type  
-To link intArray with an actual, physical array of integers, you must allocate one using new and assign it to intArray
+Although the above first declaration establishes the fact that intArray is an array variable, no array actually exists. It simply tells to the compiler that this(intArray) variable will hold an array of the integer type. To link intArray with an actual, physical array of integers, you must allocate one using new and assign it to intArray.
 
 Instantiating an Array in Java
 ---
 
-When an array is declared, only a reference of array is created  
-To actually create or give memory to array, you create an array like this:  
-The general form of new as it applies to one-dimensional arrays appears as follows:
+When an array is declared, only a reference of array is created. The general form of new as it applies to one-dimensional arrays appears as follows:
 
 ```
 array-var-name = new dataType [size];
 ```
 
-Here, type specifies the data type of data being allocated  
-Size specifies the number of elements in the array  
-And var-name is the name of array variable that is linked to the array  
-That is, to use new to allocate an array, you must specify the type and number of elements to allocate
+Here, type specifies the data type of data being allocated. Size specifies the number of elements in the array. And var-name is the name of array variable that is linked to the array. That is, to use new to allocate an array, you must specify the type and number of elements to allocate.
 
 ```
-int intArray[];	//declaring array
-intArray = new int[20];	// allocating memory to array
+//declaring array
+int intArray[];
+
+// allocating memory to array
+intArray = new int[20]
+
+
+// or combining both declaring and allocating statements in one
+int[] intArray = new int[20]; 
 ```
 
-OR
-
-```
-int[] intArray = new int[20]; // combining both declaring and allocating statements in one
-```
-
-The elements in the array allocated by new will automatically be initialized to zero (for numeric types), false (for boolean), or null (for reference types)
-
-Obtaining an array is a two-step process  
-First, you must declare a variable of the desired array type  
-Second, you must allocate the memory that will hold the array, using new, and assign it to the array variable  
-Thus, in Java all arrays are dynamically allocated
+- The elements in the array allocated by new will automatically be initialized to zero (for numeric types), false (for boolean), or null (for reference types)
+- Obtaining an array is a two-step process
+	- First, you must declare a variable of the desired array type
+	- Second, you must allocate the memory that will hold the array, using new, and assign it to the array variable
+	- Thus, in Java all arrays are dynamically allocated
 
 Array Literal
 ---
@@ -119,22 +137,22 @@ Array Literal
 In a situation, where the size of the array and variables of array are already known, array literals can be used
 
 ```
-int[] intArray = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};	// Declaring array literal
+// declaring array literal
+int[] intArray = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 ```
 
-The length of this array determines the length of the created array  
-There is no need to write the new int[] part in the latest versions of Java
+- The length of this array determines the length of the created array
+- There is no need to write the new int[] part in the latest versions of Java
 
 ```
-int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};	// Declaring array literal
+// declaring array literal (preferred)
+int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 ```
 
 Accessing Java Array Elements using for Loop
 ---
 
-Each element in the array is accessed via its index  
-The index begins with 0 and ends at (total array size)-1  
-All the elements of array can be accessed using Java for Loop
+Each element in the array is accessed via its index. The index begins with 0 and ends at (total array size)-1. All the elements of array can be accessed using Java for Loop.
 
 ```
 // accessing the elements of the specified array
@@ -146,28 +164,16 @@ for (int i = 0; i < arr.length; i++) {
 Implementation:
 ---
 
+Accessing java arrays using for loop
+
 ```
-// Java program to illustrate creating an array of integers, puts some values in the array, and prints each value to standard output using for loop
- 
+// java program to illustrate creating an array of integers, and printing each value to standard output using for loop
+
 public class PrintArray {
 	public static void main (String[] args) {
 
-		// declares an Array of integers
-		int[] arr;
-
-		// allocating memory for 5 integers
-		arr = new int[5];
-
-		// initialize the first elements of the array
-		arr[0] = 10;
-
-		// initialize the second elements of the array
-		arr[1] = 20;
-
-		// so on...
-		arr[2] = 30;
-		arr[3] = 40;
-		arr[4] = 50;
+		// declaring, and initializing an Array of integers using array literal
+		int[] arr = {10, 20, 30, 40, 50};
 
 		// accessing the elements of the specified array
 		for (int i = 0; i < arr.length; i++) {
@@ -188,40 +194,21 @@ Element at index 3 : 40
 Element at index 4 : 50
 ```
 
-You can also access java arrays using foreach loops
+Accessing java arrays using for-each loop
 
 ```
-// Java program to illustrate creating an array of integers, puts some values in the array, and prints each value to standard output using foreach loop
- 
+// java program to illustrate creating an array of integers, and printing each value to standard output using for-each loop
+
 public class PrintArray {
 	public static void main (String[] args) {
 
-		// declares an Array of integers
-		int[] arr;
-		// declaring counter variable
-		int counter;
-
-		// allocating memory for 5 integers
-		arr = new int[5];
-
-		// initialize counter
-		counter = 0;
-
-		// initialize the first elements of the array
-		arr[0] = 10;
-
-		// initialize the second elements of the array
-		arr[1] = 20;
-
-		// so on...
-		arr[2] = 30;
-		arr[3] = 40;
-		arr[4] = 50;
+		// declaring, and initializing an Array of integers using array literal
+		int[] arr = {10, 20, 30, 40, 50};
 
 		// accessing the elements of the specified array
+		System.out.println("Elements printed in order");
 		for (int x : arr) {
-			System.out.println("Element at index " + counter + " : "+ x);
-			counter++;
+			System.out.println(x);
 		}
 	}
 }
@@ -231,11 +218,12 @@ Output:
 ---
 
 ```
-Element at index 0 : 10
-Element at index 1 : 20
-Element at index 2 : 30
-Element at index 3 : 40
-Element at index 4 : 50
+Elements printed in order
+10
+20
+30
+40
+50
 ```
 
 Arrays of Objects
@@ -244,7 +232,8 @@ Arrays of Objects
 An array of objects is created just like an array of primitive type data items in the following way
 
 ```
-Student[] arr = new Student[7];	//student is a user-defined class
+// student is a user-defined class
+Student[] arr = new Student[7];
 ```
 
 The studentArray contains seven memory spaces each of size of student class in which the address of seven Student objects can be stored  
@@ -355,20 +344,14 @@ A multidimensional array is created by appending one set of square brackets ([])
 
 example of 2 dimentional array:
 
-* | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-0 | value[0] [0] | value[0] [1] | value[0] [2] | value[0] [3] | value[0] [4] | value[0] [5] | value[0] [6] | value[0] [7] | value[0] [8] | value[0] [9]
-1 | value[1] [0] | value[1] [1] | value[1] [2] | value[1] [3] | value[1] [4] | value[1] [5] | value[1] [6] | value[1] [7] | value[1] [8] | value[1] [9]
-2 | value[2] [0] | value[2] [1] | value[2] [2] | value[2] [3] | value[2] [4] | value[2] [5] | value[2] [6] | value[2] [7] | value[2] [8] | value[2] [9]
-3 | value[3] [0] | value[3] [1] | value[3] [2] | value[3] [3] | value[3] [4] | value[3] [5] | value[3] [6] | value[3] [7] | value[3] [8] | value[3] [9]
-4 | value[4] [0] | value[4] [1] | value[4] [2] | value[4] [3] | value[4] [4] | value[4] [5] | value[4] [6] | value[4] [7] | value[4] [8] | value[4] [9]
-5 | value[5] [0] | value[5] [1] | value[5] [2] | value[5] [3] | value[5] [4] | value[5] [5] | value[5] [6] | value[5] [7] | value[5] [8] | value[5] [9]
-6 | value[6] [0] | value[6] [1] | value[6] [2] | value[6] [3] | value[6] [4] | value[6] [5] | value[6] [6] | value[6] [7] | value[6] [8] | value[6] [9]
-7 | value[7] [0] | value[7] [1] | value[7] [2] | value[7] [3] | value[7] [4] | value[7] [5] | value[7] [6] | value[7] [7] | value[7] [8] | value[7] [9]
-8 | value[8] [0] | value[8] [1] | value[8] [2] | value[8] [3] | value[8] [4] | value[8] [5] | value[8] [6] | value[8] [7] | value[8] [8] | value[8] [9]
-9 | value[9] [0] | value[9] [1] | value[9] [2] | value[9] [3] | value[9] [4] | value[9] [5] | value[9] [6] | value[9] [7] | value[9] [8] | value[9] [9]
-
-Array row length = 10  
-Array column length = 10
+```
+| 0 | 1 | 2 | 3 |
+| value[0] [0] | value[0] [1] | value[0] [2] | value[0] [3] |
+| value[1] [0] | value[1] [1] | value[1] [2] | value[1] [3] |
+| value[2] [0] | value[2] [1] | value[2] [2] | value[2] [3] |
+```
+Array row length = 4  
+Array column length = 4
 
 Creating, Initializing, and Accessing an Array
 ---
