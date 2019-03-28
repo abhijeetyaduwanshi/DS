@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to show how arrays class works in Java.

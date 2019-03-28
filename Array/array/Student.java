@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This will create a student object.

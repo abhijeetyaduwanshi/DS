@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to study passing arrays in methods.

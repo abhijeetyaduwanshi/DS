@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to make a duplicate of the given array.

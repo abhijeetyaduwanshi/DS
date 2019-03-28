@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to study three dimensional arrays in Java.

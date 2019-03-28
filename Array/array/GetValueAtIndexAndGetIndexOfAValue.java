@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to get the value at a given index.

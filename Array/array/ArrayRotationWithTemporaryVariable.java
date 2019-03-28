@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to rotate the given array with the help of a temporary variable.

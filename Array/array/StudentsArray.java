@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program will use the student object,

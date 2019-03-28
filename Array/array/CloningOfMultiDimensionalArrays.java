@@ -1,4 +1,4 @@
-package arrays;
+package array;
 
 /**
  * This program is to maka a duplicate of the multidimensional array.
