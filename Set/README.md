@@ -41,13 +41,17 @@ We do not have to iterate over a set, just throw the set in `System.out.println`
 
 ### size()
 
-This method is used to get the count of data stored in set. Since this is a collection length or length() will not be used but size will be used.
+This method is used to get the count of data stored in set. Since this is a collection length or length() will not be used but size will be used
 
 ```
 mySet.size();
 ```
 
 No matter what dataType data is stored in the set. This will `return int` value
+
+#### returns
+
+int value
 
 #### Implementation:
 
@@ -70,4 +74,41 @@ public class setsInJava {
 
 ```
 4
+```
+
+### isEmpty()
+
+This method is used to check if the set is empty
+
+```
+mySet.isEmpty();
+```
+
+No matter what dataType data is stored in the set. This will `return boolean` value
+
+#### returns
+
+boolean value
+
+#### Implementation:
+
+```
+public class setsInJava {
+	public static void main(String[] args) {
+		Set<String> newSet = new HashSet<String>();
+
+		newSet.add("one");
+		newSet.add("two");
+		newSet.add("three");
+		newSet.add("four");
+
+		System.out.println(newSet.isEmpty());
+	}
+}
+```
+
+#### Output:
+
+```
+false
 ```
