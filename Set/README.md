@@ -39,7 +39,7 @@ We do not have to iterate over a set, just throw the set in `System.out.println`
 
 ## Methods in Set
 
-### size
+### size()
 
 This method is used to get the count of data stored in set. Since this is a collection length or length() will not be used but size will be used.
 
