@@ -12,6 +12,6 @@ public class setsInJava {
         newSet.add("three");
         newSet.add("four");
 
-        System.out.println(newSet.size());
+        System.out.println(newSet.iterator());
     }
 }
